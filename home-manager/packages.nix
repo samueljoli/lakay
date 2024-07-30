@@ -14,6 +14,7 @@ let
   ];
 
   nixTools = with pkgs; [
+    devenv
     fh
     flake-checker
     nixfmt
