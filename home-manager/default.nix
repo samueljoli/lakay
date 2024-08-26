@@ -1,5 +1,8 @@
 { config, pkgs, inputs, ... }:
 
+let 
+  system = "aarch64-darwin";
+in
 {
   home = {
     # make dynamic or override in work flake
@@ -9,7 +12,9 @@
     sessionVariables = {
       # NOTE: What should be here
     };
-    packages = import ./packages.nix { inherit pkgs; };
+    packages = import ./packages.nix { inherit pkgs; } ++ [
+      inputs.baouncer.packages.${system}.default
+    ];
   };
   nixpkgs = {
     overlays = [
