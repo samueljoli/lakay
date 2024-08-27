@@ -23,3 +23,23 @@ alias gco="git checkout"
 alias gclean="git branch --merged master | grep -v '^\*\|  master' | xargs -n 1 git branch -d"
 alias gmend="git commit --amend --no-edit"
 alias gmendf="git commit --amend --no-edit; git push -f"
+
+# Functions
+function dvt {
+  if [ -z "$1" ]; then
+    echo "No template specified"
+    exit 1
+  fi
+
+  TEMPLATE=$1
+
+  SHA="225aa6e82f33661e8c495f06814c26780efb709f"
+
+  nix \
+    --experimental-features 'nix-command flakes' \
+    flake init \
+    --template \
+    "github:lalilul3lo/dev/${SHA}#${TEMPLATE}"
+
+  direnv allow
+}
