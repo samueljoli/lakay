@@ -1,12 +1,14 @@
 { pkgs }:
 
 let
-  gitTools = (with pkgs; [
-    difftastic
-  ] ++ (with gitAndTools; [
-    diff-so-fancy
-    git-codeowners
-  ]));
+  gitTools = (
+    with pkgs;
+    [ difftastic ]
+    ++ (with gitAndTools; [
+      diff-so-fancy
+      git-codeowners
+    ])
+  );
 
   infraTools = with pkgs; [
     awscli2
@@ -30,7 +32,4 @@ let
     yazi
   ];
 in
-infraTools
-++ gitTools
-++ nixTools
-++ toys
+infraTools ++ gitTools ++ nixTools ++ toys

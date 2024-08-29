@@ -5,7 +5,9 @@
   userName = "Samuel Joli";
   userEmail = "samuel.joli.ftn@gmail.com";
   aliases = (import ./aliases.nix { inherit pkgs; }).git;
-  delta = { enable = true; };
+  delta = {
+    enable = true;
+  };
   extraConfig = {
     core = {
       editor = "nvim";
@@ -26,6 +28,8 @@
     "*.swp"
     "npm-debug.log"
   ];
-  lfs = { enable = true; };
+  lfs = {
+    enable = true;
+  };
   package = pkgs.gitAndTools.gitFull;
 }

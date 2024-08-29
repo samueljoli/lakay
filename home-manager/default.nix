@@ -1,13 +1,19 @@
-{ config, pkgs, inputs, lib, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  lib,
+  ...
+}:
 
-let 
+let
   system = "aarch64-darwin";
 in
 {
   home = {
     # make dynamic or override in work flake
     username = "sjoli";
-    homeDirectory = "/Users/sjoli";  # paths that will be managed by home-manager
+    homeDirectory = "/Users/sjoli"; # paths that will be managed by home-manager
     stateVersion = "23.11";
     sessionVariables = {
       # NOTE: What should be here
@@ -18,9 +24,7 @@ in
   };
   nixpkgs = {
     config = {
-      allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-         "shortcat"
-      ];
+      allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "shortcat" ];
     };
     overlays = [
       inputs.neovim-nightly-overlay.overlays.default
