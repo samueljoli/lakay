@@ -25,15 +25,22 @@ alias gmend="git commit --amend --no-edit"
 alias gmendf="git commit --amend --no-edit; git push -f"
 
 # Functions
-function dvt {
+function shell { # Convenience method for quickly installing a binary
+  if [ -z "$1" ]; then
+    echo "Binary not provided"
+    return 1
+  fi
+  nix shell nixpkgs#$1
+}
+
+function dev { # Convenience method for quickly creating a flake
   if [ -z "$1" ]; then
     echo "No template specified"
-    exit 1
+    return 1
   fi
 
   TEMPLATE=$1
-
-  SHA="225aa6e82f33661e8c495f06814c26780efb709f"
+  SHA="9f37b16daa4a6ebadc683fe796592a562a964c79"
 
   nix \
     --experimental-features 'nix-command flakes' \
@@ -41,5 +48,33 @@ function dvt {
     --template \
     "github:lalilul3lo/dev/${SHA}#${TEMPLATE}"
 
+  local function template_replace() {
+      echo -n "Enter the replacement (e.g., baouncer): "
+      read REPLACEMENT
+
+      # Check if inputs are empty
+      if [ -z "$REPLACEMENT" ]; then
+          echo "Invalid input. Both target and replacement are required."
+          return 1
+      fi
+
+      # Format the inputs
+      local TARGET="{{%= $TEMPLATE =%}}"
+
+      # Loop through each file in the current directory
+      for file in *; do
+          # Skip directories
+          if [ -f "$file" ]; then
+              # Replace the target template string with the replacement value
+              sed -i '' "s/$TARGET/$REPLACEMENT/g" "$file"
+          fi
+      done
+
+      echo "Replacement complete."
+  }
+
+  template_replace
+
   direnv allow
 }
+

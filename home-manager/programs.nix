@@ -24,4 +24,9 @@
   starship = import ./starship.nix { inherit pkgs; };
 
   zsh = import ./zsh/default.nix { inherit pkgs; };
+
+  zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 }
