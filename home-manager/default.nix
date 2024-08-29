@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, lib, ... }:
 
 let 
   system = "aarch64-darwin";
@@ -17,6 +17,11 @@ in
     ];
   };
   nixpkgs = {
+    config = {
+      allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+         "shortcat"
+      ];
+    };
     overlays = [
       inputs.neovim-nightly-overlay.overlays.default
       (final: prev: {

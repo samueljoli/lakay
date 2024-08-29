@@ -22,6 +22,7 @@ let
   ];
 
   toys = with pkgs; [
+    shortcat
     bat
     fzf
     oha
