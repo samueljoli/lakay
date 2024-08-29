@@ -17,7 +17,7 @@ let
     devenv
     fh
     flake-checker
-    nixfmt
+    nixfmt-rfc-style
     nixpkgs-fmt
   ];
 
