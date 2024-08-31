@@ -70,6 +70,8 @@ in
     cmp_luasnip
     luasnip
     nvim-cmp
+
+    rustaceanvim
   ];
 
   extraLuaPackages = ps: [ ps.jsregexp ];
