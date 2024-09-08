@@ -40,7 +40,7 @@ function dev { # Convenience method for quickly creating a flake
   fi
 
   TEMPLATE=$1
-  SHA="9f37b16daa4a6ebadc683fe796592a562a964c79"
+  SHA="6f095719f703d9d314f39d65d940a95c504174af"
 
   nix \
     --experimental-features 'nix-command flakes' \
