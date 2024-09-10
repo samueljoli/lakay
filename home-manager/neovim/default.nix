@@ -66,11 +66,14 @@ in
 
     conform-nvim
 
-    cmp-path
-    cmp-nvim-lsp
-    cmp_luasnip
-    luasnip
     nvim-cmp
+    cmp-path
+
+    cmp_luasnip
+    cmp-nvim-lsp
+    
+    luasnip
+    friendly-snippets
   ];
 
   extraLuaPackages = ps: [ ps.jsregexp ];

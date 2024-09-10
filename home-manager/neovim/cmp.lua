@@ -1,5 +1,7 @@
 local cmp = require("cmp")
 local luasnip = require("luasnip")
+require("luasnip.loaders.from_vscode").lazy_load()
+luasnip.filetype_extend("typescript", { "javascript" })
 luasnip.config.setup({})
 
 cmp.setup({
@@ -27,7 +29,7 @@ cmp.setup({
 		-- Accept ([y]es) the completion.
 		--  This will auto-import if your LSP supports select_prev_itemit.
 		--  This will expand snippets if the LSP sent a snippet.
-		["<C-y>"] = cmp.mapping.confirm({ select = true }),
+		-- ["<C-y>"] = cmp.mapping.confirm({ select = true }),
 
 		-- If you prefer more traditional completion keymaps,
 		-- you can uncomment the following lines
