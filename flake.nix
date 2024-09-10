@@ -34,6 +34,10 @@
       url = "github:Bilal2453/luvit-meta";
       flake = false;
     };
+    plugin-dir-telescope = {
+      url = "github:princejoogie/dir-telescope.nvim";
+      flake = false;
+    };
     baouncer = {
       url = "github:lalilul3lo/baouncer";
       inputs.nixpkgs.follows = "nixpkgs";

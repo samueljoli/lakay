@@ -338,6 +338,22 @@
         "type": "github"
       }
     },
+    "plugin-dir-telescope": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1724719740,
+        "narHash": "sha256-B/cZUkjAVi52jopBwZJYmiaVf8PqnawusnSGOx7dDqs=",
+        "owner": "princejoogie",
+        "repo": "dir-telescope.nvim",
+        "rev": "805405b9f98dc3470f8676773dc0e6151a9158ed",
+        "type": "github"
+      },
+      "original": {
+        "owner": "princejoogie",
+        "repo": "dir-telescope.nvim",
+        "type": "github"
+      }
+    },
     "plugin-gruvbox-nvim": {
       "flake": false,
       "locked": {
@@ -425,6 +441,7 @@
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nixpkgs": "nixpkgs_2",
         "plugin-cyberpunk-nvim": "plugin-cyberpunk-nvim",
+        "plugin-dir-telescope": "plugin-dir-telescope",
         "plugin-gruvbox-nvim": "plugin-gruvbox-nvim",
         "plugin-heirline-components": "plugin-heirline-components",
         "plugin-lazydev-nvim": "plugin-lazydev-nvim",

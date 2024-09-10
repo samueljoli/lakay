@@ -1,4 +1,6 @@
-require("telescope").setup({
+local telescope = require("telescope")
+
+telescope.setup({
 	extensions = {
 		fzf = {
 			fuzzy = true, -- false will only do exact matching
@@ -11,6 +13,10 @@ require("telescope").setup({
 		},
 	},
 })
+
+require("dir-telescope").setup({})
+
+telescope.load_extension("dir")
 
 -- See `:help telescope.builtin`
 local builtin = require("telescope.builtin")
@@ -28,3 +34,6 @@ vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = '[S]earch Recent Fi
 vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
 
 vim.keymap.set("n", "<leader>gt", builtin.git_status, { desc = "Search Git Status" })
+
+vim.keymap.set("n", "<leader>fd", "<cmd>Telescope dir live_grep<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>pd", "<cmd>Telescope dir find_files<CR>", { noremap = true, silent = true })

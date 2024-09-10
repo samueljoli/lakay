@@ -42,8 +42,10 @@ in
     nvim-web-devicons
     plenary-nvim
     telescope-fzf-native-nvim
-    telescope-nvim
     telescope-ui-select-nvim
+    telescope-nvim
+
+    pkgs.vimPlugins.foreign-dir-telescope
 
     pkgs.vimPlugins.foreign-yazi-nvim
 

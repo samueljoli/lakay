@@ -30,6 +30,10 @@ in
       inputs.neovim-nightly-overlay.overlays.default
       (final: prev: {
         vimPlugins = prev.vimPlugins // {
+          foreign-dir-telescope = prev.vimUtils.buildVimPlugin {
+            name = "dir-telescope";
+            src = inputs.plugin-dir-telescope;
+          };
           foreign-yazi-nvim = prev.vimUtils.buildVimPlugin {
             name = "yazi";
             src = inputs.plugin-yazi-nvim;
