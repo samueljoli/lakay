@@ -62,6 +62,7 @@ in
     pkgs.vimPlugins.foreign-lazydev-nvim
     pkgs.vimPlugins.foreign-luvit-meta
     nvim-lspconfig
+    typescript-tools-nvim
 
     conform-nvim
 
