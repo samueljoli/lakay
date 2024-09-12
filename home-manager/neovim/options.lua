@@ -129,3 +129,5 @@ if vim.fn.has("macunix") == 1 then
 	vim.api.nvim_set_keymap("v", "<C-x>", ":!pbcopy<CR>", { noremap = true })
 	vim.api.nvim_set_keymap("v", "<C-c>", ":w !pbcopy<CR><CR>", { noremap = true })
 end
+
+vim.opt.showtabline = 2
