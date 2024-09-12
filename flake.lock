@@ -373,16 +373,17 @@
     "plugin-heirline-components": {
       "flake": false,
       "locked": {
-        "lastModified": 1718209926,
-        "narHash": "sha256-lKyW8o0xYeq5bzCgImAbUHjnU2hJsbuzSQN9vmupFnU=",
+        "lastModified": 1723525838,
+        "narHash": "sha256-RrlkCfihaM+x1wAuiqmSaqp97wLWXrYc1sTTOvszejg=",
         "owner": "Zeioth",
         "repo": "heirline-components.nvim",
-        "rev": "2cb2702fe05479390b7cbd5cf97f3c3388270d63",
+        "rev": "f849bbfe05f0d523449eb8d0713dffd4c3d7c295",
         "type": "github"
       },
       "original": {
         "owner": "Zeioth",
         "repo": "heirline-components.nvim",
+        "rev": "f849bbfe05f0d523449eb8d0713dffd4c3d7c295",
         "type": "github"
       }
     },

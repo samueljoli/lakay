@@ -23,7 +23,7 @@
       flake = false;
     };
     plugin-heirline-components = {
-      url = "github:Zeioth/heirline-components.nvim";
+      url = "github:Zeioth/heirline-components.nvim/f849bbfe05f0d523449eb8d0713dffd4c3d7c295";
       flake = false;
     };
     plugin-lazydev-nvim = {

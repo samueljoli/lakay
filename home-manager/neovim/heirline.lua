@@ -1,53 +1,89 @@
 local heirline = require("heirline")
-local heirline_components = require("heirline-components.all")
+local lib = require("heirline-components.all") -- I call it lib for short, but you can call it as you want.
 
-heirline_components.init.subscribe_to_events()
-heirline.load_colors(heirline_components.hl.get_colors())
+-- You can also try to run this after setup.
+-- If subscribe_to_events() don't run correctly, you will see an empty tabline.
+lib.init.subscribe_to_events()
+heirline.load_colors(lib.hl.get_colors())
 
 heirline.setup({
-	statusline = {
-		hl = { fg = "fg", bg = "bg" },
-		heirline_components.component.mode(),
-		heirline_components.component.git_branch(),
-		heirline_components.component.file_info(),
-		heirline_components.component.git_diff(),
-		heirline_components.component.diagnostics(),
-		heirline_components.component.fill(),
-		heirline_components.component.cmd_info(),
-		heirline_components.component.fill(),
-		-- heirline_components.component.lsp(),
-		heirline_components.component.compiler_state(),
-		-- heirline_components.component.virtual_env(),
-		heirline_components.component.nav(),
-		heirline_components.component.mode({ surround = { separator = "right" } }),
+	opts = {
+		disable_winbar_cb = function(args) -- We do this to avoid showing it on the greeter.
+			local is_disabled = not require("heirline-components.buffer").is_valid(args.buf)
+				or lib.condition.buffer_matches({
+					buftype = { "terminal", "prompt", "nofile", "help", "quickfix" },
+					filetype = {
+						"NvimTree",
+						"neo%-tree",
+						"dashboard",
+						"Outline",
+						"aerial",
+						"rnvimr",
+						"yazi",
+					},
+				}, args.buf)
+			return is_disabled
+		end,
 	},
 	tabline = { -- UI upper bar
-		heirline_components.component.tabline_conditional_padding(),
-		heirline_components.component.tabline_buffers(),
-		heirline_components.component.fill({ hl = { bg = "tabline_bg" } }),
-		heirline_components.component.tabline_tabpages(),
+		lib.component.tabline_conditional_padding(),
+		lib.component.tabline_buffers(),
+		lib.component.fill({ hl = { bg = "tabline_bg" } }),
+		lib.component.tabline_tabpages(),
 	},
 	winbar = { -- UI breadcrumbs bar
+		---@class WinbarComponent
+		---@field bufnr integer
 		init = function(self)
 			self.bufnr = vim.api.nvim_get_current_buf()
 		end,
 		fallthrough = false,
+		-- Winbar for terminal, neotree, and aerial.
 		{
-			heirline_components.component.neotree(),
-			heirline_components.component.compiler_play(),
-			heirline_components.component.fill(),
-			heirline_components.component.breadcrumbs(),
-			heirline_components.component.fill(),
-			heirline_components.component.compiler_redo(),
-			heirline_components.component.aerial(),
+			condition = function()
+				return not lib.condition.is_active()
+			end,
+			{
+				lib.component.neotree(),
+				lib.component.compiler_play(),
+				lib.component.fill(),
+				lib.component.compiler_redo(),
+				lib.component.aerial(),
+			},
+		},
+		-- Regular winbar
+		{
+			lib.component.neotree(),
+			lib.component.compiler_play(),
+			lib.component.fill(),
+			lib.component.breadcrumbs(),
+			lib.component.fill(),
+			lib.component.compiler_redo(),
+			lib.component.aerial(),
 		},
 	},
 	statuscolumn = { -- UI left column
 		init = function(self)
 			self.bufnr = vim.api.nvim_get_current_buf()
 		end,
-		heirline_components.component.foldcolumn(),
-		heirline_components.component.numbercolumn(),
-		heirline_components.component.signcolumn(),
+		lib.component.foldcolumn(),
+		lib.component.numbercolumn(),
+		lib.component.signcolumn(),
 	} or nil,
+	statusline = { -- UI statusbar
+		hl = { fg = "fg", bg = "bg" },
+		lib.component.mode(),
+		lib.component.git_branch(),
+		lib.component.file_info(),
+		lib.component.git_diff(),
+		lib.component.diagnostics(),
+		lib.component.fill(),
+		lib.component.cmd_info(),
+		lib.component.fill(),
+		lib.component.lsp(),
+		lib.component.compiler_state(),
+		lib.component.virtual_env(),
+		lib.component.nav(),
+		lib.component.mode({ surround = { separator = "right" } }),
+	},
 })
