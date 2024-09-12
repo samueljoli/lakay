@@ -22,6 +22,7 @@ in
     ${builtins.readFile ./comment.lua}
     ${builtins.readFile ./gitsigns.lua}
     ${builtins.readFile ./colorizer.lua}
+    ${builtins.readFile ./autopairs.lua}
     ${builtins.readFile ./heirline.lua}
     ${builtins.readFile ./lazydev.lua}
     ${builtins.readFile ./lsp.lua}
@@ -52,6 +53,7 @@ in
     comment-nvim
     gitsigns-nvim
     nvim-colorizer-lua
+    nvim-autopairs
 
     pkgs.vimPlugins.foreign-heirline-components
     heirline-nvim
