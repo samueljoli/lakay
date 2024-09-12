@@ -51,6 +51,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		--  Useful when your language has ways of declaring types without an actual implementation.
 		map("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
 
+		-- Code Action
+		map("<leader>la", function()
+			vim.lsp.buf.code_action({ border = "rounded" })
+		end, "LSP code action")
+
 		-- Show diagnostic on line in float
 		map("gl", function()
 			vim.diagnostic.open_float()
@@ -157,11 +162,14 @@ local servers = {
 		-- capabilities = {},
 		settings = {
 			Lua = {
+				workspace = {
+					ignoreDir = { "node_modules", ".git", "dist", "build" },
+				},
 				completion = {
 					callSnippet = "Replace",
 				},
 				-- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-				-- diagnostics = { disable = { 'missing-fields' } },
+				diagnostics = { disable = { "missing-fields" } },
 			},
 		},
 	},
