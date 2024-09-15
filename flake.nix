@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
     };
@@ -45,21 +46,35 @@
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }@inputs:
     {
+      self,
+      nixpkgs,
+      home-manager,
+      flake-utils,
+      ...
+    }@inputs:
+    flake-utils.lib.eachDefaultSystem (system:
+      let
+        pkgs = nixpkgs.legacyPackages.${system};
 
-      defaultPackage.aarch64-darwin = home-manager.defaultPackage.aarch64-darwin;
+        inherit (pkgs) lib;
+      in 
+      {
+        packages = {
+          default = home-manager.defaultPackage.${system};
+          homeConfigurations = {
+            "sjoli" = home-manager.lib.homeManagerConfiguration {
+              pkgs = pkgs;
 
-      homeConfigurations = {
-        "sjoli" = home-manager.lib.homeManagerConfiguration {
-          pkgs = import nixpkgs { system = "aarch64-darwin"; };
+              modules = [ ./home-manager/default.nix ];
 
-          modules = [ ./home-manager/default.nix ];
-
-          extraSpecialArgs = {
-            inherit inputs;
+              extraSpecialArgs = {
+                inherit inputs;
+                inherit system;
+              };
+            };
           };
         };
-      };
-    };
+      }
+    );
 }
