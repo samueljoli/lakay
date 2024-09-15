@@ -160,18 +160,24 @@ local servers = {
 		-- cmd = {...},
 		-- filetypes = { ...},
 		-- capabilities = {},
-		settings = {
-			Lua = {
-				workspace = {
-					ignoreDir = { "node_modules", ".git", "dist", "build" },
-				},
-				completion = {
-					callSnippet = "Replace",
-				},
-				-- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-				diagnostics = { disable = { "missing-fields" } },
-			},
-		},
+		-- settings = {
+		-- 	Lua = {
+		-- 		workspace = {
+		-- 			ignoreDir = {
+		-- 				".direnv",
+		-- 				".git",
+		-- 				"dist",
+		-- 				"build",
+		-- 				"node_modules",
+		-- 			},
+		-- 		},
+		-- 		completion = {
+		-- 			callSnippet = "Replace",
+		-- 		},
+		-- 		-- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
+		-- 		diagnostics = { disable = { "missing-fields" } },
+		-- 	},
+		-- },
 	},
 }
 
