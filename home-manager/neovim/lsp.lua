@@ -156,23 +156,7 @@ local servers = {
 	-- But for many setups, the LSP (`tsserver`) will work just fine
 	-- tsserver = {},
 
-	lua_ls = {
-		-- cmd = {...},
-		-- filetypes = { ...},
-		-- capabilities = {},
-		settings = {
-			Lua = {
-				workspace = {
-					ignoreDir = { "node_modules", ".git", "dist", "build" },
-				},
-				completion = {
-					callSnippet = "Replace",
-				},
-				-- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-				diagnostics = { disable = { "missing-fields" } },
-			},
-		},
-	},
+	-- lua_ls = {} NOTE: configured via .luarc.json in home-manager directory
 }
 
 -- Ensure the servers and tools above are installed

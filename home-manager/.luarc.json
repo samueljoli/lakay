@@ -1,0 +1,15 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json",
+  "workspace.ignoreDir": [
+    ".direnv",
+    ".git",
+    "dist",
+    "build",
+    "node_modules",
+    "target",
+  ],
+  "diagnostics.disable": "missing-fields",
+  "completion.callSnippet": "Replace",
+  "runtime.version": "Lua 5.3",
+}
+
