@@ -2,13 +2,10 @@
   config,
   pkgs,
   inputs,
+  system,
   lib,
   ...
 }:
-
-let
-  system = "aarch64-darwin";
-in
 {
   home = {
     # make dynamic or override in work flake
