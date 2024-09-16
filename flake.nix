@@ -53,14 +53,16 @@
       flake-utils,
       ...
     }@inputs:
-    flake-utils.lib.eachDefaultSystem (system:
+    flake-utils.lib.eachDefaultSystem (
+      system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
 
         inherit (pkgs) lib;
-      in 
+      in
       {
         packages = {
+          formatter = pkgs.nixfmt-rfc-style;
           default = home-manager.defaultPackage.${system};
           homeConfigurations = {
             "sjoli" = home-manager.lib.homeManagerConfiguration {
@@ -75,11 +77,8 @@
             };
           };
         };
-        devShells.default = pkgs.mkShell {
-          packages = with pkgs; [
-            lua-language-server
-          ];
-        };
+        formatter = pkgs.nixfmt-rfc-style;
+        devShells.default = pkgs.mkShell { packages = with pkgs; [ lua-language-server ]; };
       }
     );
 }
