@@ -62,7 +62,6 @@
       in
       {
         packages = {
-          formatter = pkgs.nixfmt-rfc-style;
           default = home-manager.defaultPackage.${system};
           homeConfigurations = {
             "sjoli" = home-manager.lib.homeManagerConfiguration {
