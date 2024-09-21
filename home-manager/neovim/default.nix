@@ -28,6 +28,7 @@ in
     ${builtins.readFile ./lsp.lua}
     ${builtins.readFile ./conform.lua}
     ${builtins.readFile ./cmp.lua}
+    ${builtins.readFile ./grug.lua}
   '';
 
   plugins = with pkgs.vimPlugins; [
@@ -49,6 +50,8 @@ in
     pkgs.vimPlugins.foreign-dir-telescope
 
     pkgs.vimPlugins.foreign-yazi-nvim
+
+    pkgs.vimPlugins.foreign-grug-nvim
 
     comment-nvim
     gitsigns-nvim

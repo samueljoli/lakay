@@ -31,6 +31,10 @@
             name = "dir-telescope";
             src = inputs.plugin-dir-telescope;
           };
+          foreign-grug-nvim = prev.vimUtils.buildVimPlugin {
+            name = "grug";
+            src = inputs.plugin-grug-nvim;
+          };
           foreign-yazi-nvim = prev.vimUtils.buildVimPlugin {
             name = "yazi";
             src = inputs.plugin-yazi-nvim;

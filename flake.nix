@@ -15,6 +15,10 @@
       url = "github:samueljoli/cyberpunk.nvim";
       flake = false;
     };
+    plugin-grug-nvim = {
+      url = "github:MagicDuck/grug-far.nvim";
+      flake = false;
+    };
     plugin-gruvbox-nvim = {
       url = "github:ellisonleao/gruvbox.nvim";
       flake = false;

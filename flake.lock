@@ -372,6 +372,22 @@
         "type": "github"
       }
     },
+    "plugin-grug-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1726863099,
+        "narHash": "sha256-Q00FTL0nBuZGmAJRZpDz0lJXDPmozNb4bpEjPaJTBHw=",
+        "owner": "MagicDuck",
+        "repo": "grug-far.nvim",
+        "rev": "308e357be687197605cf19222f843fbb331f50f5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "MagicDuck",
+        "repo": "grug-far.nvim",
+        "type": "github"
+      }
+    },
     "plugin-gruvbox-nvim": {
       "flake": false,
       "locked": {
@@ -462,6 +478,7 @@
         "nixpkgs": "nixpkgs_2",
         "plugin-cyberpunk-nvim": "plugin-cyberpunk-nvim",
         "plugin-dir-telescope": "plugin-dir-telescope",
+        "plugin-grug-nvim": "plugin-grug-nvim",
         "plugin-gruvbox-nvim": "plugin-gruvbox-nvim",
         "plugin-heirline-components": "plugin-heirline-components",
         "plugin-lazydev-nvim": "plugin-lazydev-nvim",
