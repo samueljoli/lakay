@@ -29,6 +29,7 @@ let
     fzf
     oha
     ripgrep
+    ast-grep
     yazi
   ];
 in
