@@ -71,19 +71,34 @@ heirline.setup({
 		lib.component.signcolumn(),
 	} or nil,
 	statusline = { -- UI statusbar
-		hl = { fg = "fg", bg = "bg" },
-		lib.component.mode(),
-		lib.component.git_branch(),
-		lib.component.file_info(),
-		lib.component.git_diff(),
-		lib.component.diagnostics(),
-		lib.component.fill(),
-		lib.component.cmd_info(),
-		lib.component.fill(),
-		lib.component.lsp(),
-		lib.component.compiler_state(),
-		lib.component.virtual_env(),
-		lib.component.nav(),
-		lib.component.mode({ surround = { separator = "right" } }),
+		init = function(self)
+			self.bufnr = vim.api.nvim_get_current_buf()
+		end,
+		fallthrough = false,
+		{
+			condition = function()
+				return not lib.condition.is_active()
+			end,
+			hl = { fg = "fg", bg = "bg" },
+			lib.component.mode(),
+			lib.component.git_branch(),
+		},
+		-- Active statusline
+		{
+			hl = { fg = "bg", bg = "bg" },
+			lib.component.mode(),
+			lib.component.git_branch(),
+			lib.component.file_info(),
+			lib.component.git_diff(),
+			lib.component.diagnostics(),
+			lib.component.fill(),
+			lib.component.cmd_info(),
+			lib.component.fill(),
+			lib.component.lsp(),
+			lib.component.compiler_state(),
+			lib.component.virtual_env(),
+			lib.component.nav(),
+			lib.component.mode({ surround = { separator = "right" } }),
+		},
 	},
 })
