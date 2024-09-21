@@ -5,6 +5,8 @@ t () { mkdir -p "$(dirname "$1")" && touch "$1" ; }
 alias l='ls -lah'
 alias oa="open -a"
 alias osa="osascript -e"
+alias c="clear"
+alias v="nvim ."
 
 # Git
 alias gap="git add ."
