@@ -27,6 +27,10 @@
       inputs.neovim-nightly-overlay.overlays.default
       (final: prev: {
         vimPlugins = prev.vimPlugins // {
+          foreign-vim-kitty = prev.vimUtils.buildVimPlugin {
+            name = "kitty";
+            src = inputs.plugin-vim-kitty;
+          };
           foreign-statuscolumn-nvim = prev.vimUtils.buildVimPlugin {
             name = "statuscolumn";
             src = inputs.plugin-statuscolumn-nvim;
@@ -75,5 +79,10 @@
   programs = import ./programs.nix {
     inherit pkgs;
     inherit inputs;
+  };
+
+  home.file = {
+    ".config/kitty/get_layout.py".source = ./kitty/get_layout.py;
+    ".config/kitty/pass_keys.py".source = ./kitty/pass_keys.py;
   };
 }
