@@ -6,7 +6,7 @@ alias l='ls -lah'
 alias oa="open -a"
 alias osa="osascript -e"
 alias c="clear"
-alias v="nvim ."
+alias v="nvim"
 
 # Git
 alias gap="git add ."
