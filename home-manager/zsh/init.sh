@@ -9,7 +9,7 @@ alias c="clear"
 alias v="nvim"
 
 # Git
-alias gap="git add ."
+alias gaa="git add ."
 alias gap="git add -p"
 alias gcl="git clone"
 alias gst="git status"
