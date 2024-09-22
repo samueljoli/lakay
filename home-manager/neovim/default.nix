@@ -29,6 +29,7 @@ in
     ${builtins.readFile ./conform.lua}
     ${builtins.readFile ./cmp.lua}
     ${builtins.readFile ./grug.lua}
+    ${builtins.readFile ./tint.lua}
   '';
 
   plugins = with pkgs.vimPlugins; [
@@ -52,6 +53,8 @@ in
     pkgs.vimPlugins.foreign-yazi-nvim
 
     pkgs.vimPlugins.foreign-grug-nvim
+
+    pkgs.vimPlugins.foreign-tint-nvim
 
     comment-nvim
     gitsigns-nvim

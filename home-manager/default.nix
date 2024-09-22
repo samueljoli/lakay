@@ -35,6 +35,10 @@
             name = "grug";
             src = inputs.plugin-grug-nvim;
           };
+          foreign-tint-nvim = prev.vimUtils.buildVimPlugin {
+            name = "tint-nvim";
+            src = inputs.plugin-tint-nvim;
+          };
           foreign-yazi-nvim = prev.vimUtils.buildVimPlugin {
             name = "yazi";
             src = inputs.plugin-yazi-nvim;

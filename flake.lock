@@ -453,6 +453,22 @@
         "type": "github"
       }
     },
+    "plugin-tint-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1714574002,
+        "narHash": "sha256-b0qDgML4i/xvQ5o594YoX8U5zgQHvS23SAZ2dG6ocCE=",
+        "owner": "levouh",
+        "repo": "tint.nvim",
+        "rev": "02bd0527a315a80e4e25bb2dd7b6994fb0daae01",
+        "type": "github"
+      },
+      "original": {
+        "owner": "levouh",
+        "repo": "tint.nvim",
+        "type": "github"
+      }
+    },
     "plugin-yazi-nvim": {
       "flake": false,
       "locked": {
@@ -483,6 +499,7 @@
         "plugin-heirline-components": "plugin-heirline-components",
         "plugin-lazydev-nvim": "plugin-lazydev-nvim",
         "plugin-luvit-meta": "plugin-luvit-meta",
+        "plugin-tint-nvim": "plugin-tint-nvim",
         "plugin-yazi-nvim": "plugin-yazi-nvim"
       }
     },

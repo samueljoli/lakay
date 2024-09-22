@@ -11,6 +11,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    plugin-tint-nvim = {
+      url = "github:levouh/tint.nvim";
+      flake = false;
+    };
     plugin-cyberpunk-nvim = {
       url = "github:samueljoli/cyberpunk.nvim";
       flake = false;
