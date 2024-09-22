@@ -15,6 +15,7 @@ in
     ${builtins.readFile ./options.lua}
     ${builtins.readFile ./keymaps.lua}
     ${builtins.readFile ./cyberpunk.lua}
+    ${builtins.readFile ./tokyo_night.lua}
     ${builtins.readFile ./treesitter.lua}
     ${builtins.readFile ./hop.lua}
     ${builtins.readFile ./telescope.lua}
@@ -34,6 +35,8 @@ in
   '';
 
   plugins = with pkgs.vimPlugins; [
+    tokyonight-nvim
+
     vim-nix
 
     pkgs.vimPlugins.foreign-cyberpunk-nvim
