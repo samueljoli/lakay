@@ -453,6 +453,22 @@
         "type": "github"
       }
     },
+    "plugin-statuscolumn-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1722661235,
+        "narHash": "sha256-/X19k6wt50aLEcJwB0GtrhW4GkpZpHAzFjNY9YoBmXg=",
+        "owner": "JuanBaut",
+        "repo": "statuscolumn.nvim",
+        "rev": "5e821339e26de3c59745eaebfd4565d988a0b92a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "JuanBaut",
+        "repo": "statuscolumn.nvim",
+        "type": "github"
+      }
+    },
     "plugin-tint-nvim": {
       "flake": false,
       "locked": {
@@ -499,6 +515,7 @@
         "plugin-heirline-components": "plugin-heirline-components",
         "plugin-lazydev-nvim": "plugin-lazydev-nvim",
         "plugin-luvit-meta": "plugin-luvit-meta",
+        "plugin-statuscolumn-nvim": "plugin-statuscolumn-nvim",
         "plugin-tint-nvim": "plugin-tint-nvim",
         "plugin-yazi-nvim": "plugin-yazi-nvim"
       }

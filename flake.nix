@@ -11,6 +11,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    plugin-statuscolumn-nvim = {
+      url = "github:JuanBaut/statuscolumn.nvim";
+      flake = false;
+    };
     plugin-tint-nvim = {
       url = "github:levouh/tint.nvim";
       flake = false;

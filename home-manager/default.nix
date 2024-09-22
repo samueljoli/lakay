@@ -27,6 +27,10 @@
       inputs.neovim-nightly-overlay.overlays.default
       (final: prev: {
         vimPlugins = prev.vimPlugins // {
+          foreign-statuscolumn-nvim = prev.vimUtils.buildVimPlugin {
+            name = "statuscolumn";
+            src = inputs.plugin-statuscolumn-nvim;
+          };
           foreign-dir-telescope = prev.vimUtils.buildVimPlugin {
             name = "dir-telescope";
             src = inputs.plugin-dir-telescope;

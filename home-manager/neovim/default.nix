@@ -30,6 +30,7 @@ in
     ${builtins.readFile ./cmp.lua}
     ${builtins.readFile ./grug.lua}
     ${builtins.readFile ./tint.lua}
+    ${builtins.readFile ./statuscolumn.lua}
   '';
 
   plugins = with pkgs.vimPlugins; [
@@ -55,6 +56,8 @@ in
     pkgs.vimPlugins.foreign-grug-nvim
 
     pkgs.vimPlugins.foreign-tint-nvim
+
+    foreign-statuscolumn-nvim
 
     comment-nvim
     gitsigns-nvim
