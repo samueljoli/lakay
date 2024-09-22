@@ -11,6 +11,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    plugin-vim-kitty = {
+      url = "github:knubie/vim-kitty-navigator/20abf8613aa228a5def1ae02cd9da0f2d210352a";
+      flake = false;
+    };
     plugin-statuscolumn-nvim = {
       url = "github:JuanBaut/statuscolumn.nvim";
       flake = false;

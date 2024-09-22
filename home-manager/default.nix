@@ -31,6 +31,10 @@
             name = "statuscolumn";
             src = inputs.plugin-statuscolumn-nvim;
           };
+          foreign-vim-kitty = prev.vimUtils.buildVimPlugin {
+            name = "kitty";
+            src = inputs.plugin-vim-kitty;
+          };
           foreign-dir-telescope = prev.vimUtils.buildVimPlugin {
             name = "dir-telescope";
             src = inputs.plugin-dir-telescope;
@@ -75,5 +79,10 @@
   programs = import ./programs.nix {
     inherit pkgs;
     inherit inputs;
+  };
+
+  home.file = {
+    ".config/kitty/get_layout.py".source = ./kitty/get_layout.py;
+    ".config/kitty/pass_keys.py".source = ./kitty/pass_keys.py;
   };
 }

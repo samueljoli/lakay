@@ -116,10 +116,10 @@ vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagn
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
 -- j/k/h/l to switch panes
-vim.keymap.set("n", "<C-j>", "<C-W>j", { noremap = true, desc = "Move to the window below" })
-vim.keymap.set("n", "<C-k>", "<C-W>k", { noremap = true, desc = "Move to the window above" })
-vim.keymap.set("n", "<C-h>", "<C-W>h", { noremap = true, desc = "Move to the window on the left" })
-vim.keymap.set("n", "<C-l>", "<C-W>l", { noremap = true, desc = "Move to the window on the right" })
+-- vim.keymap.set("n", "<C-j>", "<C-W>j", { noremap = true, desc = "Move to the window below" })
+-- vim.keymap.set("n", "<C-k>", "<C-W>k", { noremap = true, desc = "Move to the window above" })
+-- vim.keymap.set("n", "<C-h>", "<C-W>h", { noremap = true, desc = "Move to the window on the left" })
+-- vim.keymap.set("n", "<C-l>", "<C-W>l", { noremap = true, desc = "Move to the window on the right" })
 
 -- Copy/Paste/Cut
 if vim.fn.has("unnamedplus") == 1 then

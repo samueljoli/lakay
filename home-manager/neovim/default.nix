@@ -62,6 +62,8 @@ in
 
     foreign-statuscolumn-nvim
 
+    foreign-vim-kitty
+
     comment-nvim
     gitsigns-nvim
     nvim-colorizer-lua
@@ -87,7 +89,6 @@ in
 
     cmp_luasnip
     cmp-nvim-lsp
-    
     luasnip
     friendly-snippets
   ];
