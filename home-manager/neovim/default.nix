@@ -81,6 +81,7 @@ in
     pkgs.vimPlugins.foreign-luvit-meta
     nvim-lspconfig
     typescript-tools-nvim
+    rustaceanvim
 
     conform-nvim
 
