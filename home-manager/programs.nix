@@ -7,6 +7,10 @@
 
   git = import ./git.nix { inherit pkgs; };
 
+  gpg = {
+    enable = true;
+  };
+
   direnv = {
     enable = true;
     enableZshIntegration = true;
