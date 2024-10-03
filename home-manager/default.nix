@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  git-hello,
   inputs,
   system,
   lib,
@@ -17,6 +18,7 @@
     };
     packages = import ./packages.nix { inherit pkgs; } ++ [
       inputs.baouncer.packages.${system}.default
+      git-hello
     ];
   };
   nixpkgs = {

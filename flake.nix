@@ -74,6 +74,11 @@
       let
         pkgs = nixpkgs.legacyPackages.${system};
 
+        git-hello = pkgs.writeShellScriptBin "git-hello" ''
+          #!/usr/bin/env bash
+          echo "Hello, $(git config user.name)! Welcome to Git."
+        '';
+
         inherit (pkgs) lib;
       in
       {
@@ -88,6 +93,7 @@
               extraSpecialArgs = {
                 inherit inputs;
                 inherit system;
+                inherit git-hello;
               };
             };
           };
